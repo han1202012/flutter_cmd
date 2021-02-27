@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cmd/StatelessWidgetPage.dart';
 import 'package:flutter_color_plugin/flutter_color_plugin.dart';
 
-void main() => runApp(StatelessWidgetPage());
+import 'StatefulWidgetPage.dart';
+
+void main() => runApp(StatefulWidgetPage());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
