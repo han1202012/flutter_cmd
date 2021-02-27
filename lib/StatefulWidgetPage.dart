@@ -73,28 +73,47 @@ class _StatefulWidgetPageState extends State<StatefulWidgetPage> {
 
         ],),
 
+        // 设置悬浮按钮
+        floatingActionButton: FloatingActionButton(
+          onPressed: (){
+            print("悬浮按钮点击");
+          },
+          child: Text("悬浮按钮组件"),
+        ),
+
         // Container 容器使用
         body:
         _currentSelectedIndex == 0 ?
 
-        Container( // 对应底部导航栏主界面选项卡
-          // 设置容器的装饰器 , BoxDecoration 是最常用的装饰器
-          // 可以自行查看 BoxDecoration 中可以设置的属性
-          decoration: BoxDecoration(color: Colors.white),
-
-          // 设置 child 子组件居中方式, 居中放置
-          alignment: Alignment.center,
-
-          // 子组件, 子组件设置为一个 Column 组件
-          child: Column(
-            // Column 子组件, 这里设置 Text 文本组件
+        // 刷新指示器组件
+        RefreshIndicator(
+          // 显示的内容
+          child: ListView(
             children: <Widget>[
-              Text("主页面选项卡")
+              Container( // 对应底部导航栏设置选项卡
+                // 设置容器的装饰器 , BoxDecoration 是最常用的装饰器
+                // 可以自行查看 BoxDecoration 中可以设置的属性
+                decoration: BoxDecoration(color: Colors.white),
 
+                // 设置 child 子组件居中方式, 居中放置
+                alignment: Alignment.center,
 
+                // 子组件, 子组件设置为一个 Column 组件
+                child: Column(
+                  // Column 子组件, 这里设置 Text 文本组件
+                  children: <Widget>[
+                    Text("主页面选项卡, 下拉刷新")
+
+                  ],
+                ),
+              ),
             ],
           ),
 
+          // 刷新时回调的方法
+          // 列表发生下拉操作时, 回调该方法
+          // 该回调是 Future 类型的
+          onRefresh: _refreshIndicatorOnRefresh,
         )
         :
         Container( // 对应底部导航栏设置选项卡
@@ -119,4 +138,15 @@ class _StatefulWidgetPageState extends State<StatefulWidgetPage> {
       ),
     );
   }
+
+  /// RefreshIndicator 发生下拉操作时, 回调该方法
+  /// 该方啊是一个异步方法 , 在方法体前添加 async 关键字
+  Future<Null> _refreshIndicatorOnRefresh() async{
+    // 暂停 500 ms , 使用 await 关键字实现
+    // 在这 500 ms 之间 , 列表处于刷新状态
+    // 500 ms 之后 , 列表变为非刷新状态
+    await Future.delayed(Duration(milliseconds: 500));
+    return null;
+  }
+
 }
