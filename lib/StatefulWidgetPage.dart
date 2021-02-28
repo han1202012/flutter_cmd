@@ -102,7 +102,33 @@ class _StatefulWidgetPageState extends State<StatefulWidgetPage> {
                 child: Column(
                   // Column 子组件, 这里设置 Text 文本组件
                   children: <Widget>[
-                    Text("主页面选项卡, 下拉刷新")
+                    Text("主页面选项卡, 下拉刷新"),
+
+                    // 图片组件 , 从网络中加载一张图片
+                    Image.network(
+                        // 图片地址
+                      "https://img-blog.csdnimg.cn/20210228180808133.png",
+                      // 图片宽度
+                      width: 200,
+                      // 图片高度
+                      height: 200,
+                    ),
+
+                    // 输入框组件
+                    TextField(
+                      // 设置输入框样式
+                      decoration: InputDecoration(
+                        // 设置内容边距, 左右边距为 10, 上下边距为 0
+                        contentPadding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                        // 设置的提示文案信息
+                        hintText: "提示信息",
+                        // 设置提示文案样式
+                        hintStyle: TextStyle(fontSize: 20, color: Colors.grey),
+                      ),
+
+
+
+                    )
 
                   ],
                 ),
