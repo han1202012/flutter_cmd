@@ -125,10 +125,55 @@ class _StatefulWidgetPageState extends State<StatefulWidgetPage> {
                         // 设置提示文案样式
                         hintStyle: TextStyle(fontSize: 20, color: Colors.grey),
                       ),
+                    ),
 
+                    // 设置一个布局容器 , 用于封装 PageView 组件
+                    Container(
+                      // 设置高度
+                      height: 200,
+                      // 设置边距
+                      margin: EdgeInsets.only(top: 10),
+                      // 设置装饰, 背景深橙色
+                      decoration: BoxDecoration(
+                        color: Colors.deepOrange
+                      ),
+                      // 设置子组件 PageView
+                      child: PageView(
+                        // 设置 PageView 中封装的若干组件
+                        children: <Widget>[
+                          // 第一个页面组件
+                          Container(
+                            // 设置居中方式 , 居中显示
+                            alignment:Alignment.center,
+                            // 设置装饰器 , 绿色背景
+                            decoration: BoxDecoration(color: Colors.green),
+                            // 显示的主要文字
+                            child: Text("页面 0", style: TextStyle(fontSize: 20, color: Colors.black),),
+                          ),
 
+                          // 第二个页面组件
+                          Container(
+                            // 设置居中方式 , 居中显示
+                            alignment:Alignment.center,
+                            // 设置装饰器 , 绿色背景
+                            decoration: BoxDecoration(color: Colors.red),
+                            // 显示的主要文字
+                            child: Text("页面 1", style: TextStyle(fontSize: 20, color: Colors.white),),
+                          ),
 
-                    )
+                          // 第三个页面组件
+                          Container(
+                            // 设置居中方式 , 居中显示
+                            alignment:Alignment.center,
+                            // 设置装饰器 , 绿色背景
+                            decoration: BoxDecoration(color: Colors.black),
+                            // 显示的主要文字
+                            child: Text("页面 2", style: TextStyle(fontSize: 20, color: Colors.yellow),),
+                          ),
+
+                        ],
+                      ),
+                    ),
 
                   ],
                 ),
