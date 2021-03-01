@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cmd/StatelessWidgetPage.dart';
 import 'package:flutter_color_plugin/flutter_color_plugin.dart';
-
 import 'LayoutPage.dart';
 import 'StatefulWidgetPage.dart';
 

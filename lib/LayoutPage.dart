@@ -149,7 +149,6 @@ class _LayoutPageState extends State<LayoutPage> {
                       ],
                     ),
 
-
                     // 设置一个布局容器 , 用于封装 PageView 组件
                     Container(
                       // 设置高度
@@ -162,7 +161,9 @@ class _LayoutPageState extends State<LayoutPage> {
                       ),
                       // 设置子组件 PageView 的裁剪组件
                       child:
-                      PhysicalModel(color: Colors.transparent,
+                      PhysicalModel(
+                        color: Colors.transparent,
+
                         // 设置圆角半径 15
                         borderRadius: BorderRadius.circular(50),
 
@@ -206,12 +207,54 @@ class _LayoutPageState extends State<LayoutPage> {
 
                           ],
                         ),
-
                       ),
                     ),
 
 
+                    Container(
+                      child: Column(
+                        children: <Widget>[
+                          // 水平/垂直方向平铺组件
+                          FractionallySizedBox(
+                            // 设置宽度充满父容器
+                            widthFactor: 1,
 
+                            // 要设置的水平 / 垂直方向的平铺操作的组件
+                            child: Container(
+                              decoration: BoxDecoration(color: Colors.black),
+                              child: Text(
+                                "高度自适应, 宽度充满父容器",
+                                style: TextStyle(color: Colors.amberAccent),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+
+                    // 帧布局
+                    Stack(
+                      children: <Widget>[
+                        Image.network("https://img-blog.csdnimg.cn/20210301145757946.png",
+                          width: 100,
+                          height: 100,
+                        ),
+
+                        // 设置组件位置在 Stack 的相对位置
+                        Positioned(
+                          right: 0, // 距离右侧 0 距离
+                          bottom: 0, // 距离底部 0 距离
+
+                          // 设置约束的组件位置
+                          child: Image.network("https://img-blog.csdnimg.cn/20210228180808133.png",
+                            width: 25,
+                            height: 25,
+                          ),
+                        ),
+
+
+                      ],
+                    ),
                   ],
                 ),
               ),
