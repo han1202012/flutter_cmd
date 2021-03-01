@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cmd/StatelessWidgetPage.dart';
 import 'package:flutter_color_plugin/flutter_color_plugin.dart';
 
+import 'LayoutPage.dart';
 import 'StatefulWidgetPage.dart';
 
-void main() => runApp(StatefulWidgetPage());
+void main() => runApp(LayoutPage());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -21,7 +22,16 @@ class MyApp extends StatelessWidget {
         // "hot reload" (press "r" in the console where you ran "flutter run",
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
+        // is not restarted.class Padding extends SingleChildRenderObjectWidget {
+        //   /// Creates a widget that insets its child.
+        //   ///
+        //   /// The [padding] argument must not be null.
+        //   const Padding({
+        //     Key key,
+        //     @required this.padding,
+        //     Widget child,
+        //   }) : assert(padding != null),
+        //        super(key: key, child: child);
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
