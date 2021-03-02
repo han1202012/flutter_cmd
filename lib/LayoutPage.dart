@@ -243,8 +243,8 @@ class _LayoutPageState extends State<LayoutPage> {
 
                   // 设置组件位置在 Stack 的相对位置
                   Positioned(
-                    right: 0, // 距离右侧 0 距离
-                    bottom: 0, // 距离底部 0 距离
+                    left: 0, // 距离右侧 0 距离
+                    top: 0, // 距离底部 0 距离
 
                     // 设置约束的组件位置
                     child: Image.network("https://img-blog.csdnimg.cn/20210228180808133.png",
@@ -324,6 +324,56 @@ class _LayoutPageState extends State<LayoutPage> {
                 ],
               ),
 
+              // 普通样式的 Row
+              Row(
+                children: <Widget>[
+                  Container(
+                    // 背景设置成黑色
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                    ),
+
+                    // 字体设置成黄色
+                    child: Text(
+                      "Text 原始样式",
+                      style: TextStyle(color: Colors.yellow),
+                    ),
+                  ),
+                ],
+              ),
+
+              // 空行
+              SizedBox(
+                width: 10,
+                height: 20,
+              ),
+
+              // 使用了 Exoanbded 组件的 Row
+              Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Container(
+                      // 背景设置成黑色
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                      ),
+
+                      // 字体设置成黄色
+                      child: Text(
+                        "Expanded 组件中的 Text 组件",
+                        style: TextStyle(color: Colors.yellow),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+              // 空行
+              SizedBox(
+                width: 10,
+                height: 100,
+              ),
+
             ],
           ),
 
@@ -346,8 +396,6 @@ class _LayoutPageState extends State<LayoutPage> {
             // Column 子组件, 这里设置 Text 文本组件
             children: <Widget>[
               Text("设置页面选项卡")
-
-
             ],
           ),
 
