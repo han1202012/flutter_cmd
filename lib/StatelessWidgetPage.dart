@@ -15,7 +15,17 @@ class StatelessWidgetPage extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: AppBar(title: Text('StatelessWidget 组件示例'),),
+        appBar: AppBar(
+          title: Text('StatelessWidget 组件示例'),
+          // 回退按钮, 点击该按钮退出该界面
+          leading: GestureDetector(
+            onTap: (){
+              // 退出界面方法
+              Navigator.pop(context);
+            },
+            child: Icon(Icons.arrow_back_ios),
+          ),
+        ),
 
         // Container 容器使用
         body: Container(

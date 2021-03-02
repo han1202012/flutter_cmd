@@ -25,7 +25,17 @@ class _StatefulWidgetPageState extends State<StatefulWidgetPage> {
       ),
       home: Scaffold(
         // 顶部标题栏
-        appBar: AppBar(title: Text('StatefulWidgetPage 组件示例'),),
+        appBar: AppBar(
+          title: Text('StatefulWidgetPage 组件示例'),
+          // 回退按钮, 点击该按钮退出该界面
+          leading: GestureDetector(
+            onTap: (){
+              // 退出界面方法
+              Navigator.pop(context);
+            },
+            child: Icon(Icons.arrow_back_ios),
+          ),
+        ),
 
         // 底部导航栏 BottomNavigationBar 设置
         // items 可以设置多个 BottomNavigationBarItem
