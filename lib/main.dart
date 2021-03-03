@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cmd/GesturePage.dart';
+import 'package:flutter_cmd/ResourcePage.dart';
 import 'package:flutter_cmd/StatelessWidgetPage.dart';
 import 'LayoutPage.dart';
 import 'StatefulWidgetPage.dart';
@@ -100,6 +101,13 @@ class _RouteNavigatorState extends State<RouteNavigator> {
               Navigator.push(context, MaterialPageRoute(builder: (context) => GesturePage()));
             },
             child: Text("手势检测界面"),
+          ),
+
+          RaisedButton(
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ResourcePage()));
+            },
+            child: Text("资源使用界面"),
           ),
 
         ],
