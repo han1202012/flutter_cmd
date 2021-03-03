@@ -27,6 +27,9 @@ dependencies:
   # 添加颜色插件依赖
   flutter_color_plugin: ^0.0.2
 
+  # 打开第三方应用插件
+  url_launcher: ^5.7.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

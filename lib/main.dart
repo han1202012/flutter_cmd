@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cmd/GesturePage.dart';
 import 'package:flutter_cmd/ResourcePage.dart';
 import 'package:flutter_cmd/StatelessWidgetPage.dart';
+import 'package:flutter_cmd/WidgetLifeCyclePage.dart';
+import 'LauncherPage.dart';
 import 'LayoutPage.dart';
 import 'StatefulWidgetPage.dart';
 
@@ -108,6 +110,20 @@ class _RouteNavigatorState extends State<RouteNavigator> {
               Navigator.push(context, MaterialPageRoute(builder: (context) => ResourcePage()));
             },
             child: Text("资源使用界面"),
+          ),
+
+          RaisedButton(
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => LauncherPage()));
+            },
+            child: Text("第三方应用跳转"),
+          ),
+
+          RaisedButton(
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => WidgetLiftCyclePage()));
+            },
+            child: Text("StatefulWidget 页面生命周期"),
           ),
 
         ],
