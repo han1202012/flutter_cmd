@@ -7,6 +7,7 @@ import 'AppLiftCyclePage.dart';
 import 'LauncherPage.dart';
 import 'LayoutPage.dart';
 import 'StatefulWidgetPage.dart';
+import 'ThemePage.dart';
 
 void main() => runApp(MyApp());
 
@@ -136,6 +137,14 @@ class _RouteNavigatorState extends State<RouteNavigator> {
               Navigator.push(context, MaterialPageRoute(builder: (context) => AppLifeCyclePage()));
             },
             child: Text("应用生命周期"),
+          ),
+
+
+          RaisedButton(
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ThemePage()));
+            },
+            child: Text("主题切换"),
           ),
 
         ],
