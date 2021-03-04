@@ -3,6 +3,7 @@ import 'package:flutter_cmd/GesturePage.dart';
 import 'package:flutter_cmd/ResourcePage.dart';
 import 'package:flutter_cmd/StatelessWidgetPage.dart';
 import 'package:flutter_cmd/WidgetLifeCyclePage.dart';
+import 'AppLiftCyclePage.dart';
 import 'LauncherPage.dart';
 import 'LayoutPage.dart';
 import 'StatefulWidgetPage.dart';
@@ -52,6 +53,9 @@ class _RouteNavigatorState extends State<RouteNavigator> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // 居中
+      alignment: Alignment.center,
+
       child: Column(
         children: <Widget>[
 
@@ -124,6 +128,14 @@ class _RouteNavigatorState extends State<RouteNavigator> {
               Navigator.push(context, MaterialPageRoute(builder: (context) => WidgetLiftCyclePage()));
             },
             child: Text("StatefulWidget 页面生命周期"),
+          ),
+
+
+          RaisedButton(
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => AppLifeCyclePage()));
+            },
+            child: Text("应用生命周期"),
           ),
 
         ],
