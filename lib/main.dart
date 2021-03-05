@@ -20,6 +20,10 @@ class MyApp extends StatelessWidget {
 
       // 设置主题
       theme: ThemeData(
+        // 配置字体
+        fontFamily: "RubikMonoOne",
+
+        // 配置主题颜色
         primarySwatch: Colors.blue,
       ),
 
@@ -128,7 +132,7 @@ class _RouteNavigatorState extends State<RouteNavigator> {
             onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => WidgetLiftCyclePage()));
             },
-            child: Text("StatefulWidget 页面生命周期"),
+            child: Text("StatefulWidget 页面生命周期", style: TextStyle(fontFamily: "RubikMonoOne"),),
           ),
 
 
